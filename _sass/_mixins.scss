@@ -1,0 +1,11 @@
+@mixin background-opacity($color:#000000, $opacity: 0.7) {
+    /* Fallback for web browsers that doesn't support RGBa */
+    background: $color;
+    /* RGBa with 0.8 opacity */
+    background-color: rgba($color, 0.7);
+
+    /* IE 5-7 */
+    //filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC8D218D, endColorstr=#CC8D218D)";
+    /* For IE 8*/
+    //-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC8D218D, endColorstr=#CC8D218D)";
+}

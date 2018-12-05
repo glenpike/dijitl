@@ -1,0 +1,19 @@
+---
+---
+@import 'mixins';
+@import 'colours';
+
+a,
+.colourchange,
+.colourchange-hover:hover {
+    color: $green;
+}
+
+.thumbnail-link {
+    &__text {
+        color: $green;
+    }
+    &:hover &__text {
+        @include background-opacity($green, 0.8);
+    }
+}

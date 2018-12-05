@@ -1,0 +1,19 @@
+---
+---
+@import 'mixins';
+@import 'colours';
+
+a,
+.colourchange,
+.colourchange-hover:hover {
+    color: $orange;
+}
+
+.thumbnail-link {
+    &__text {
+        color: $orange;
+    }
+    &:hover &__text {
+        @include background-opacity($orange, 0.8);
+    }
+}

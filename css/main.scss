@@ -1,0 +1,495 @@
+---
+---
+/*  Run sass --watch css:css in parent dir
+    Run guard in parent dir for live-reload
+
+    FIXME - text-left on h1's etc.
+    FIXME - resets for ul's, etc?
+
+    FIXME baseline padding, etc.
+*/
+
+$inuit-base-font-size:          18px;
+$inuit-base-line-height:        28px;
+$inuit-base-text-color:         #fff;
+$inuit-base-background-color:   #000;
+
+@import "../vendor/inuit-defaults/settings.defaults";
+
+
+$base-font-family:      Arial, 'Liberation Sans', FreeSans, sans-serif;
+
+
+$font-size-h1:          36px;
+$font-size-h2:          24px;
+$font-size-h3:          20px;
+$font-size-h4:          18px;
+$font-size-h5:          16px;
+$font-size-h6:          14px;
+
+$link-underlined:       false;
+$link-underlined-hover: false;
+
+@import "../vendor/inuit-functions/tools.functions";
+@import "../vendor/inuit-mixins/tools.mixins";
+
+@import 'mixins';
+
+@import "../vendor/inuit-normalize/generic.normalize";
+@import "../vendor/inuit-box-sizing/generic.box-sizing";
+
+@import "../vendor/inuit-page/base.page";
+
+@import 'colours';
+
+body {
+    //font: 14px/1.5 Arial, 'Liberation Sans', FreeSans, sans-serif;
+    text-align: center;
+    background-color: $black;
+    min-width: 1000px;
+}
+
+h1, h2, h3, h4, h5, h6,
+p {
+    margin-bottom: $inuit-base-line-height;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    text-align: left;
+}
+
+.blog__title {
+    margin-top: 0;
+}
+
+.page-head__title {
+    @include inuit-font-size(40px);
+}
+
+.article__header {
+    @include inuit-font-size($font-size-h1);
+}
+
+h2 {
+    @include inuit-font-size($font-size-h2);
+}
+
+h3 {
+    @include inuit-font-size($font-size-h3);
+}
+
+h4 {
+    @include inuit-font-size($font-size-h4);
+}
+
+h5 {
+    @include inuit-font-size($font-size-h5);
+}
+
+h6 {
+    @include inuit-font-size($font-size-h6);
+}
+
+//Fix this for hovers, or leave it?
+a {
+    color: $color-link;
+
+    @if ($link-underlined == false) {
+        text-decoration: none;
+    }
+
+    &:hover {
+        color: $color-link-hover;
+
+        @if ($link-underlined-hover == false) {
+            text-decoration: none;
+        }
+
+        @if ($link-underlined-hover == true) {
+            text-decoration: underline;
+        }
+
+    }
+
+}
+
+/*
+  960 Grid System ~ Core CSS.
+  Learn more ~ http://960.gs/
+
+  Licensed under GPL and MIT.
+*/
+
+/* `Container
+----------------------------------------------------------------------------------------------------*/
+
+.container_12 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    // background-color: #000;
+    // text-align: left;
+    // padding-bottom: 40px;
+}
+/* `Grid >> Global
+----------------------------------------------------------------------------------------------------*/
+
+.grid_1,
+.grid_2,
+.grid_3,
+.grid_4,
+.grid_5,
+.grid_6,
+.grid_7,
+.grid_8,
+.grid_9,
+.grid_10,
+.grid_11,
+.grid_12,
+.grid_13,
+.grid_14,
+.grid_15,
+.grid_16 {
+    display: inline;
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.container_12 .grid_3 {
+    width: 220px;
+}
+
+.container_12 .grid_6 {
+    width: 460px;
+}
+
+.container_12 .grid_9 {
+    width: 700px;
+}
+
+.container_12 .grid_12 {
+    width: 940px;
+}
+/* `Grid >> Children (Alpha ~ First, Omega ~ Last)
+----------------------------------------------------------------------------------------------------*/
+
+.alpha {
+    margin-left: 0;
+}
+
+.omega {
+    margin-right: 0;
+}
+/* `Grid >> 12 Columns
+----------------------------------------------------------------------------------------------------*/
+
+.container_12 .grid_1 {
+    width: 60px;
+}
+
+.container_12 .grid_2,
+.thumbnails li {
+    width: 140px;
+}
+
+.container_12 .grid_4 {
+    width: 300px;
+}
+
+.container_12 .grid_5 {
+    width: 380px;
+}
+
+.container_12 .grid_7 {
+    width: 540px;
+}
+
+.container_12 .grid_8 {
+    width: 620px;
+}
+
+.container_12 .grid_10 {
+    width: 780px;
+}
+
+.container_12 .grid_11 {
+    width: 860px;
+}
+/* `Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+/* http://sonspring.com/journal/clearing-floats */
+
+.clear {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+/* http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified */
+
+.clearfix:before,
+.clearfix:after,
+.container_12:before,
+.container_12:after {
+    content: '.';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    font-size: 0;
+    line-height: 0;
+    width: 0;
+    height: 0;
+}
+
+.clearfix:after,
+.container_12:after {
+    clear: both;
+}
+/*
+  The following zoom:1 rule is specifically for IE6 + IE7.
+  Move to separate stylesheet if invalid CSS is a problem.
+*/
+
+.clearfix,
+.container_12 {
+    zoom: 1;
+}
+
+.decoration-font {
+    font-family: 'BentonSans-Bold', Arial, 'Liberation Sans', FreeSans, sans-serif;
+    font-weight: bold;
+}
+
+
+//Reset needed?
+
+// h1 {
+//     font-size: 36px;
+//     clear: both;
+//     margin-bottom: 20px;
+// }
+
+// h2 {
+//     font-size: 18px;
+//     clear: both;
+//     margin-bottom: 10px;
+// }
+
+ul {
+    list-style: none;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-left: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    text-align: justify;
+    // margin-bottom: 20px;
+}
+.page-head {
+    // position: relative;
+    // display: block;
+    // width: 100%;
+    // height: 120px;
+}
+.page-head {
+    display: block;
+}
+
+.abs {
+    position: absolute;
+}
+.canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.logo {
+    padding-top: 30px;
+    padding-bottom: 45px;
+}
+
+.page-head__title {
+    margin: 0;
+    text-align: right;
+    padding-top: 43px;
+    padding-bottom: 56px;
+}
+
+.red-bg {
+    background-color: $red;
+}
+
+.orange-bg {
+    background-color: $orange;
+}
+
+.green-bg {
+    background-color: $green;
+}
+
+.blue-bg {
+    background-color: $blue;
+}
+
+.purple-bg {
+    background-color: $purple;
+}
+
+.pink-bg {
+    background-color: $pink;
+}
+
+.container_12 {
+    // background-color: #000;
+    // text-align: left;
+    padding-bottom: 40px;
+}
+
+.colours {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0;
+    width: 20px;
+    display: none;
+}
+
+.colours__swatch {
+    width: 20px;
+    height: 20px;
+    float: left;
+    clear: both;
+    display: block;
+    outline-style: none;
+}
+
+.menu_box {
+    position: relative;
+}
+
+.menu_box .colours {
+    right: 0;
+    left: auto;
+}
+
+.menu {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.menu li {
+    margin-left: 40px;
+    padding: 0;
+}
+/* Why does IE just never   work!!! */
+
+.slideshow {
+    width: 620px;
+    min-width: 620px;
+    overflow: hidden;
+    clear: left;
+    margin-bottom: 20px;
+    padding: 0;
+    display: block;
+}
+
+.slideshow ul {
+    margin: 0;
+    padding: 0;
+}
+
+.slideshow ul li {
+    list-style: none;
+}
+
+.slideshow ul li.show {
+    z-index: 500;
+}
+
+//FIXME - thumbnails stuff
+.thumbnail-box {
+    width: 620px;
+    min-width: 620px;
+    display: block;
+}
+
+//ul reset?
+.thumbnails {
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 0;
+}
+//li reset?
+.thumbnails li {
+    margin: 0 20px 20px 0;
+    padding: 0;
+    float: left;
+}
+/* Yay! */
+.thumbnails li:nth-child(4n+0) {
+    margin-right: 0;
+}
+
+/* Object */
+//move me
+.link-pic {
+    position: relative;
+    display: block;
+}
+.link-pic__img {
+    //anything?
+}
+
+.link-pic__text {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 4px 8px;
+    margin: 5px;
+    display: block;
+    font-size: 14px;
+}
+/* /Object */
+
+/* Component / Theming */
+.thumbnail-link {
+    width: 140px;
+    height: 112px;
+
+    &__text {
+        color: $color-link;
+        @include background-opacity();
+    }
+    &:hover &__text {
+        //a nesting above overrides this!
+        color: $white;
+        @include background-opacity($color-link, 0.8);
+    }
+}
+
+/* Theming */
+
+.colourchange {
+    color: $color-link;
+}
+.colourchange-hover {
+    color: $white;
+}
+
+.colourchange-hover:hover {
+    color: $color-link;
+}

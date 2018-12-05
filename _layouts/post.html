@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<div class="grid_8">
+    <article>
+      <h1 class="blog__title colourchange">{{ page.title }}</h1>
+      {{ content }}
+    </article>
+</div>
+<div class="grid_4 menu_box">
+    {% include colour_links.html %}
+
+    {% include menu.html %}
+</div>
