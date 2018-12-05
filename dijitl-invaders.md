@@ -9,6 +9,7 @@ slides:
     alt: dijitl space invaders game
   - image: images/invaders/invaders-scores.png
     alt: dijitl space invaders game scores
+slide_height: 482
 ---
 <p>My friends at Channel produced me a lovely logo and when I first saw it, I realised I could make space invader type characters out of the glyphs. </p>
 <p>As an exercise in creative branding, I tried to put a new spin on an old classic game. I built space invaders using only the letters in the logo to create all the game sprites and added a scoreboard.</p>

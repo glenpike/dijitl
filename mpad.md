@@ -13,6 +13,7 @@ slides:
     alt: MPAD Flash Site Case Study Page
   - image: images/mpad/mpad-contact.jpg
     alt: MPAD Flash Site Contact Page
+slide_height: 354
 ---
 <p>I worked with a local designer in creating a flash based website for a local PR company.
   The site was created with ActionScript 2 and used XML to configure a customised Tree Component menu, loading content dynamically.

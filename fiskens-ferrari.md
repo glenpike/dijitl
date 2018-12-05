@@ -9,6 +9,7 @@ slides:
     alt: fiskens ferrari 250 SWB Spec Page
   - image: images/fiskens/media.jpg
     alt: fiskens ferrari 250 SWB Media Page
+slide_height: 344
 ---
 <p>uknetweb contracted me to produce a mini-site that could be used to showcase a classic car for sale.  The site would also be the basis of a framework that could easily be used to generate a showcase for another vehicle. This lovely car was selling for around &pound;1 million. </p>
 <p>I built the site using Flex and ActionScript and created a simple set of components to be used for each page, allowing the site to be re-skinned and updated quickly.</p>

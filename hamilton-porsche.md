@@ -9,6 +9,7 @@ slides:
     alt: hamilton porsche 936 spyder Gallery Page
   - image: images/hamilton/media.jpg
     alt: hamilton porsche 936 spyder Media Page
+slide_height: 354
 ---
 <p>The <a href="fiskens-ferrari">framework</a> created for uknetweb  to showcase classic cars for sale was used again for this project. I refactored the framework to make commonly used views and provided for the content to be loaded at runtime via XML and the site map be created as embedded XML that was compiled into the project.</p>
 <!-- FIXME - where to host:

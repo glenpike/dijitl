@@ -15,6 +15,7 @@ slides:
     alt: Surfers Against Sewage - Save Our Seas Flash Site Wordsearch Puzzle
   - image: images/sas-sos/certificate.jpg
     alt: Surfers Against Sewage - Save Our Seas Flash Site Certificate Creator
+slide_height: 496
 
 ---
 <p>After the success of <a href="sas-obc">Operation Beach Clean</a>, Surfers Against Sewage asked me to create a second educational resource for Key Stage 2, primary school students.</p>

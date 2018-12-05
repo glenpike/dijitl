@@ -17,6 +17,7 @@ slides:
     alt: Copernicus Robotic Theatre - Ferrix Robot
   - image: images/robothespian/robots-video.jpg
     alt: Copernicus Robotic Theatre - Ferrix & Crystal
+slide_height: 496
 ---
 <p>I worked for 3 years as a software developer for Engineered Arts, where my main role was programming, developing and customising a Flash touchscreen interface used to control an animatronic robot. </p>
 <p>I developed a custom framework in AS3 designed to facilitate fast development of new pages and abstract the various robot elements controlled by the application. The interface had content management facilities and an Adobe AIR based file browser for uploading animations, sound and images. The interface text was translated into several languages, including Arabic, Korean and Chinese, using my XML based translation system across the interface.</p>

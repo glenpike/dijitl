@@ -11,6 +11,7 @@ slides:
     alt: Electric December Flash Site Home Page
   - image: images/electricdecember/gallery.jpg
     alt: Electric December Flash Site Gallery
+slide_height: 465
 ---
 <p>I concieved, planned and ran a project to get kids to think about renewable energy in a creative way, using Flash animations and automata models as part of the Electric December project.</p>
 <p>I ran four days of workshops with secondary school students where we taught them to make automata and do animation work in Flash. They were challenged to produce designs for objects based around the principle of the &quot;Conservation of Energy&quot;.</p>

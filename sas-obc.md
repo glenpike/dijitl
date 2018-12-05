@@ -13,6 +13,7 @@ slides:
     alt: Surfers Against Sewage - Operation Beach Clean Flash Site Case KS3 Activities Page
   - image: images/sas-obc/interactive.png
     alt: Surfers Against Sewage - Operation Beach Clean Flash Site Quiz Page
+slide_height: 480
 ---
 <p>After I provided Surfers Against Sewage with a storyboard and concept which they used to obtain some funding, SAS commissioned me to create an educational resource that they could provide free of charge to UK schools in order to get their message across to  secondary school students. </p>
 <p>I worked with SAS and a scriptwriter on the concept and story for this resource, which had to provide some educational value, then recorded the dialogue, which was sent to an animation team in London.</p>

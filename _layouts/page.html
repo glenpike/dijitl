@@ -1,11 +1,10 @@
 ---
 layout: default
 ---
-
 <div class="grid_8 slideshow" style="height: 465px;">
     <ul class="innerfade" style="position: relative; width: 620px;">
         {% for slide in page.slides %}
-        <li><img src="{{slide.image}}" alt="{{slide.alt | default: page.title }}" width="620" height="{{slide.height | default: page.default_image_height }}" /></li>
+        <li><img src="{{slide.image}}" alt="{{slide.alt | default: page.title }}" width="620" height="{{ page.slide_height | default: 496 }}" /></li>
         {% endfor %}
     </ul>
 </div>

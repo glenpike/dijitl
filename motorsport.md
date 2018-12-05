@@ -11,6 +11,7 @@ slides:
     alt: Motorsport Digital Archive CDROM Search Results
   - image: images/motorsport/print.jpg
     alt: Motorsport Digital Archive CDROM Print Page
+slide_height: 496
 ---
 <p>I was contracted by uknetweb to work on the front end of a dvd application for displaying past issues of MotorSport magazine. The magazine were archiving all their old issues into digital format and wanted to provide a way for enthusiasts to read these old versions.</p>
 <p>I was provided with a design and layout to make up an application that would load and display images of each page in the magazine and to also provide a search facility. I worked with uknetweb to find a solution and produced a PHP script that would extract the text from PDF files into files that could be loaded and searched in the application.</p>
