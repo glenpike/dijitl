@@ -405,21 +405,37 @@ p {
     margin-bottom: 20px;
     padding: 0;
     display: block;
+    position: relative;
 }
 
-.slideshow ul {
-    margin: 0;
-    padding: 0;
+.slideshow img {
+    position:absolute; left:0; right:0; opacity:0;
 }
-
-.slideshow ul li {
-    list-style: none;
+// TODO - can generate?
+.slideshow_2 img {
+    @include fade($num:2, $fade:5, $visible:0);
 }
-
-.slideshow ul li.show {
-    z-index: 500;
+.slideshow_3 img {
+    @include fade($num:3, $fade:5, $visible:0);
 }
-
+.slideshow_4 img {
+    @include fade($num:4, $fade:5, $visible:0);
+}
+.slideshow_5 img {
+    @include fade($num:5, $fade:5, $visible:0);
+}
+.slideshow_6 img {
+    @include fade($num:6, $fade:5, $visible:0);
+}
+.slideshow_7 img {
+    @include fade($num:7, $fade:5, $visible:0);
+}
+.slideshow_8 img {
+    @include fade($num:8, $fade:5, $visible:0);
+}
+.slideshow_9 img {
+    @include fade($num:9, $fade:5, $visible:0);
+}
 //FIXME - thumbnails stuff
 .thumbnail-box {
     width: 620px;

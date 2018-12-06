@@ -1,12 +1,10 @@
 ---
 layout: default
 ---
-<div class="grid_8 slideshow" style="height: 465px;">
-    <ul class="innerfade" style="position: relative; width: 620px;">
-        {% for slide in page.slides %}
-        <li><img src="{{slide.image}}" alt="{{slide.alt | default: page.title }}" width="620" height="{{ page.slide_height | default: 496 }}" /></li>
-        {% endfor %}
-    </ul>
+<div class="grid_8 slideshow slideshow_{{page.slides.size}}" style="height: {{ page.slide_height | default: 496 }}px;">
+    {% for slide in page.slides %}
+    <img src="{{slide.image}}" alt="{{slide.alt | default: page.title }}" width="620" height="{{ page.slide_height | default: 496 }}" />
+    {% endfor %}
 </div>
 <div class="grid_4 menu_box">
     {% include colour_links.html %}
