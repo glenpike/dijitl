@@ -1,73 +1,86 @@
-$.fn.switchstylesheet = function(options) {
+// $.ready
+function ready(fn) {
+    if (document.readyState != 'loading'){
+      fn();
+    } else if (document.addEventListener) {
+      document.addEventListener('DOMContentLoaded', fn);
+    } else {
+      document.attachEvent('onreadystatechange', function() {
+        if (document.readyState != 'loading')
+          fn();
+      });
+    }
+}
 
-    //default vals
-    defaults = {
-        seperator: 'alt'
-    };
+//$.on(...)
+function addEventListener(el, eventName, handler) {
+    if (el.addEventListener) {
+      el.addEventListener(eventName, handler);
+    } else {
+      el.attachEvent('on' + eventName, function(ev){
+        handler.call(el, ev);
+      });
+    }
+}
 
-    var options = $.extend(defaults, options);
+//cookie functions
+var cookie = {
+    createCookie: function(name, value, days) {
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            var expires = "; expires=" + date.toGMTString();
+        } else var expires = "";
+        document.cookie = name + "=" + value + expires + "; path=/";
+    },
 
-    //read the style
-    var c = cookie.readCookie(options.seperator);
-    //alert("read cookie? " + c);
-    if (c) switchss(c);
-
-    //goes thru the links to find out the ones having the selector
-    $(this).click(function() {
-        var title = $(this).attr('title'); //gets the title=?
-        switchss(title);
-    });
-
-    function switchss(title) {
-        //goes thru all the styles having seperator - alt
-        $('link[rel*=style][title*=' + options.seperator + ']').each(function(i) {
-            //alert("switchcss " + title + " this " + $(this).attr('title') + " disabled ? " + this.disabled);
-            this.disabled = true;
-            if ($(this).attr('title') == title) {
-                this.disabled = false;
-            }
-        });
-        //create a cookie to store the style
-        cookie.createCookie(options.seperator, title, 365);
+    readCookie: function(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
     }
 };
 
-//cookie functions
-var cookie;
-(function($) {
-    cookie = {
-        createCookie: function(name, value, days) {
-            if (days) {
-                var date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                var expires = "; expires=" + date.toGMTString();
-            } else var expires = "";
-            document.cookie = name + "=" + value + expires + "; path=/";
-        },
 
-        readCookie: function(name) {
-            var nameEQ = name + "=";
-            var ca = document.cookie.split(';');
-            for (var i = 0; i < ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+function initSwitchStyleSheet() {
+    var savedColour = cookie.readCookie('colour');
+    if (savedColour) switchss(savedColour);
+
+    // When a new colour is chosen, go through all the stylesheets, disabling them and enabling the
+    // one that matches the chosen colour
+    function switchss(newColour) {
+        var styleSheets = document.querySelectorAll('link[rel*=style][title*=colour]')
+
+        Array.prototype.forEach.call(styleSheets, function(stylesheet) {
+            var colour = stylesheet.getAttribute('title')
+            // console.log("switchcss " + newColour + " this " + colour + " disabled ? " + stylesheet.disabled);
+            stylesheet.disabled = true;
+            if (newColour === colour) {
+                stylesheet.disabled = false;
             }
-            return null;
-        }
-    };
-})(jQuery);
-
-//Preload images...
-(function($) {
-    var cache = [];
-    // Arguments are image paths relative to the current page.
-    $.preLoadImages = function() {
-        var args_len = arguments.length;
-        for (var i = args_len; i--;) {
-            var cacheImage = document.createElement('img');
-            cacheImage.src = arguments[i];
-            cache.push(cacheImage);
-        }
+        });
+        cookie.createCookie('colour', newColour, 365);
     }
-})(jQuery)
+
+    var switchers = document.querySelectorAll('.js_colour_switch')
+
+    Array.prototype.forEach.call(switchers, function(s) {
+        addEventListener(s, 'click', function clicked(ev) {
+            switchss(ev.target.getAttribute('title'))
+        })
+    })
+
+};
+
+ready(function(){
+    var colourBlocks = document.querySelectorAll('.colours')
+    Array.prototype.forEach.call(colourBlocks, function(block) {
+        block.className = block.className.replace('colours--hidden', '');
+    })
+    initSwitchStyleSheet();
+});

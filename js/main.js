@@ -3,6 +3,7 @@
 function getCanvasContext(selector) {
 
     var canvas = document.querySelector(selector);
+    if (!canvas) return;
 
     if (canvas.getContext){
       return canvas.getContext('2d');

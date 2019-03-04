@@ -295,7 +295,7 @@ a {
 }
 
 p {
-    text-align: justify;
+    text-align: left;
     // margin-bottom: 20px;
 }
 .page-head {
@@ -364,6 +364,9 @@ p {
     top: 0;
     padding: 0;
     width: 20px;
+}
+
+.colours--hidden {
     display: none;
 }
 
