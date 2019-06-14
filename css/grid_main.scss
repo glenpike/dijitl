@@ -28,7 +28,9 @@ $link-underlined-hover: false;
 @import 'mixins';
 @import 'colours';
 
-
+* {
+  box-sizing: border-box;
+}
 body {
   //font: 14px/1.5 Arial, 'Liberation Sans', FreeSans, sans-serif;
   font-family: $base-font-family;
@@ -37,7 +39,7 @@ body {
   text-align: center;
   background-color: $black;
   color: $base-text-color;
-  min-width: 1000px;
+  // min-width: 1000px;
   position: relative;
   margin: 0;
   padding: 0;
@@ -173,23 +175,27 @@ p {
   // margin-bottom: 20px;
 }
 
+// Consider whether to include in grid or not
+.page-head {
+  display: flex;
+  padding: 20px 40px;
+  justify-content: space-between;
+  grid-area: header;
+}
+
 /* GRID */
 
 .wrapper {
-  max-width: 960px;
+  padding: 0 40px;
   margin: auto;
   text-align: left;
   display: grid;
   grid-gap: 20px;
-  grid-template-columns:  600px 300px;
-  grid-template-areas: "header header" "pictures sidebar" "content content" "footer footer";
+  grid-template-columns:  4fr 1fr;
+  grid-template-areas: "pictures sidebar" "content content";
 }
 
-.page-head {
-  display: flex;
-  justify-content: space-between;
-  grid-area: header;
-}
+
 
 .thumbnail-box {
   grid-area: pictures;
@@ -211,7 +217,9 @@ p {
 .thumbnails {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: 140px 140px 140px 140px;
+  grid-auto-flow: dense;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   margin: 0;
   padding: 0;
 }
@@ -219,6 +227,14 @@ p {
 .thumbnails li {
   margin: 0;
   padding: 0;
+}
+
+.thumbnails li a {
+  width: 100%;
+  display: inline-block;
+}
+.thumbnails li a img {
+  width: 100%;
 }
 
 /* Menu */
