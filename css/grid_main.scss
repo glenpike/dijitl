@@ -218,8 +218,8 @@ p {
   display: grid;
   grid-gap: 20px;
   grid-auto-flow: dense;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  // grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: repeat(12, 1fr); // 1fr 1fr 1fr;
   margin: 0;
   padding: 0;
 }
@@ -227,6 +227,20 @@ p {
 .thumbnails li {
   margin: 0;
   padding: 0;
+  grid-column-end: span 3;
+  grid-row-end: span 3;
+  &.grid-2x2 {
+    grid-column-end: span 2;
+    grid-row-end: span 2;
+  }
+  &.grid-4x4 {
+    grid-column-end: span 4;
+    grid-row-end: span 4;
+  }
+  &.grid-6x6 {
+    grid-column-end: span 6;
+    grid-row-end: span 6;
+  }
 }
 
 .thumbnails li a {
