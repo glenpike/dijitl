@@ -5,6 +5,6 @@
 layout: home
 title: home
 ---
-<p>I am a developer with over 10 years of experience and a passion for creating interesting interactive things using Flash, ActionScript and a host of other languages and tools.</p>
+<p>I am a developer with over 20 years of experience and a passion for creating interesting interactive things using Flash, ActionScript and a host of other languages and tools.</p>
 <p>Use the links or images to view my portfolio and <a href="images/CV_Web.pdf" title="curriculum vitae opens as a PDF document">curriculum vitae</a>. </p>
-<p>&nbsp;</p>
+<p>There is code on <a href="https://github.com/glenpike">https://github.com/glenpike</a> for you to look at too.</p>
